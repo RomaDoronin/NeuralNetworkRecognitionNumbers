@@ -1,4 +1,8 @@
-﻿using System;
+﻿// UNN, IITMM
+// © Roman Doronin, 2019
+//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +32,7 @@ namespace NeuralNetworkRecognitionNumbers
         public Form1()
         {
             InitializeComponent();
-            bitLen = MyMath.Log2((numberRecognizableNumbers - 1)) + 1;
+            bitLen = MyMath.Log2(numberRecognizableNumbers - 1) + 1;
 
             labelRecognizableNumbers.Text += numberRecognizableNumbers.ToString();
             labelBitLen.Text += bitLen.ToString();
@@ -82,6 +86,8 @@ namespace NeuralNetworkRecognitionNumbers
 
         private async void Training()
         {
+            labelTestResult.Text = "Test result:";
+            labelTraningResult.Text = "Train result:";
             progressBar.Maximum = trainSet.Count;
             progressBar.Value = 0;
             int allCount = 0;
